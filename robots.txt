@@ -1,0 +1,7 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+
+# 该文件用于告诉搜索引擎哪些内容允许被爬取，哪些不允许，这只是一个约定俗称的规则，并不是规范，无法保障用户隐私。
+# https://baike.baidu.com/item/robots%E5%8D%8F%E8%AE%AE/2483797

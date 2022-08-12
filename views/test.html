@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const iter1 = [1];
+      const iter2 = [2];
+      iterA = iter1[Symbol.iterator]();
+      iterB = iter2[Symbol.iterator]();
+      // iterA = iter1.values();
+      // iterB = iter2.values();
+
+      const main = () => {
+        while (true) {
+          const rA = iterA.next();
+          const rB = iterB.next();
+          if (rA.done && rB.done) {
+            return 0;
+          }
+          if (rA.done) {
+            return -1;
+          }
+          if (rB.done) {
+            return 1;
+          }
+
+          const r = -1;
+          if (r !== 0) return r;
+        }
+      };
+
+      const result = main();
+      console.log(result);
+    </script>
+
+    <script>
+      const sleep = (time) => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(void 0);
+          }, time);
+        });
+      };
+
+      queueMicrotask(() => {
+        console.log('11');
+
+        sleep(200).then(() => {
+          console.log('first');
+        });
+      });
+
+      queueMicrotask(() => {
+        console.log('22');
+
+        sleep(100).then(() => {
+          console.log('second');
+        });
+      });
+    </script>
+  </body>
+</html>

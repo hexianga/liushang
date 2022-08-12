@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .box {
+        width: 150px;
+        height: 150px;
+        border: 1px solid red;
+      }
+
+      .bg-contain {
+        width: 150px;
+        height: 150px;
+        border: 1px solid red;
+        background-image: url('../images/earth.jpeg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .bg-cover {
+        width: 150px;
+        height: 150px;
+        border: 1px solid red;
+        background-image: url('../images/earth.jpeg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      img {
+        border: 1px solid red;
+      }
+
+      img.origin-image {
+        width: 150px;
+      }
+
+      img.object {
+        width: 150px;
+        height: 150px;
+      }
+
+      .cover {
+        object-fit: cover;
+      }
+
+      .contain {
+        object-fit: contain;
+      }
+
+      .ml-20 {
+        margin-left: 20px;
+      }
+
+      .break-words {
+        overflow-wrap: break-word;
+        border: 1px solid red;
+        padding: 4px;
+        margin-top: 4px;
+        margin-left: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="ml-20">
+        <p>原始图片</p>
+        <img class="origin-image" src="../images/earth.jpeg" alt="" />
+      </div>
+      <div class="ml-20">
+        <p>contain</p>
+        <img class="contain object" src="../images/earth.jpeg" alt="" />
+        <p>bg contain</p>
+        <div class="bg-contain"></div>
+      </div>
+      <div class="ml-20">
+        <p>cover</p>
+        <img class="cover object" src="../images/earth.jpeg" alt="" />
+        <p>bg cover</p>
+        <div class="bg-cover"></div>
+      </div>
+
+      <div class="break-words">
+        Reach Your Language Goals while Enjoying Your Free Time. Book Your Tutor from $5 an Hour. Friendly, Expert
+        English Classes from
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+  img，video 这样的置换元素设置了一个尺寸大小，如果不对加载的资源尺寸进行设置，那么就可能会导致加载到的资源展示上变形。
+  object-fit 这个 css 属性就是用来设置资源如何填充容器的，类似 background-size。
+  object-position 类似 background-position。可以设置资源的位置。
+
+  公共设置：cover contain
+
+  cover 和 fill：两者都会填满容器，区别在于 cover 会保持宽高比，fill 直接拉升和收缩。
+  contain：完全展示。保持宽高比
+  常用的就是 cover 和 contain。fill 会导致变形。
+
+  object-position 和 background-position: object-position 默认是 50% 50%，background-position 默认是 0% 0%
+
+  object-fit: contain === background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+  object-fit: cover === background-size: cover;
+                        background-position: center;
+
+
+  Replaced elements：表现不受 css 控制的元素。典型的元素：图片，视频，iframe，embed。
+  https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element#replaced_elements
+
+  background-repeat 默认是 repeat，从左上角开始铺背景。
+-->

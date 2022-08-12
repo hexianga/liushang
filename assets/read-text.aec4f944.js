@@ -1,0 +1,1 @@
+const c=r=>new Promise((a,n)=>{const t=new FileReader,d=()=>{var s;const o=t.result;if(typeof o!="string"){n();return}const i=atob((s=o.split(";base64,")[1])!=null?s:""),{encoding:l}=window.jschardet.detect(i),e=new FileReader;e.onload=()=>{if(typeof e.result=="string"){a(e.result);return}n()},e.readAsText(r,l)};t.onload=d,t.readAsDataURL(r)});export{c as r};

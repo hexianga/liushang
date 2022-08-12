@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bignumber.js@9.0.2/bignumber.min.js"></script>
+  </head>
+  <body>
+    <script>
+      // plus
+      // minus
+      // multipliedBy
+      // dividedBy
+      let x = BigNumber(0.3).minus(0.1).toNumber();
+
+      console.log(x);
+
+      document.addEventListener('keydown', () => {
+        console.log('1111');
+      });
+      document.addEventListener('keydown', () => {
+        console.log('2222');
+      });
+      document.addEventListener('keydown', () => {
+        console.log('3333');
+      });
+
+      // https://developer.mozilla.org/zh-CN/docs/Web/API/Event/composedPath
+      // Event.composedPath() 方法计算出来的数组中的元素就是会接收到事件的元素，这些事件是如果绑定了对事件的监听将会执行
+    </script>
+    <div class="box"></div>
+  </body>
+</html>
