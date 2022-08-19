@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100%;
+        border: 1px solid red;
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      // document.addEventListener('dragstart', function (event) {
+      //   console.log('dragstart: ', event.dataTransfer);
+      // });
+      // document.addEventListener('dragenter', function (event) {
+      //   console.log('dragenter: ', event.dataTransfer);
+      // });
+      // document.addEventListener('dragleave', function (event) {
+      //   console.log('dragleave: ', event.dataTransfer);
+      // });
+      document.addEventListener('dragover', function (event) {
+        console.log('dragover: ', event.dataTransfer.types, event.dataTransfer.files, event.dataTransfer.items);
+        const items = event.dataTransfer.items;
+        console.log(items);
+        for (const item of items) {
+          const data = event.dataTransfer.getData(item.type);
+          console.log(data);
+        }
+      });
+      // document.addEventListener('drop', function (event) {
+      //   console.log('drop: ', event.dataTransfer);
+      // });
+      // document.addEventListener('dragend', function (event) {
+      //   console.log('dragend: ', event.dataTransfer);
+      // });
+    </script>
+  </body>
+</html>
