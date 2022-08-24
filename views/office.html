@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="../web-office.js"></script>
+    <script>
+      var demo = WebOfficeSDK.config({
+        url: 'http://hexiang-images.oss-cn-beijing.aliyuncs.com/任务书.docx', // 如果需要通过js-sdk传递token方式鉴权，则需要包含_w_tokentype=1参数
+      });
+      // 如果需要对iframe进行特殊的处理，可以通过以下方式拿到iframe的dom对象
+      console.log(demo.iframe);
+      // 打开文档结果
+      demo.on('fileOpen', function (data) {
+        console.log(data.success);
+      });
+    </script>
+  </body>
+</html>

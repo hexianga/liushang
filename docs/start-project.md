@@ -19,7 +19,7 @@ vercel dev
 
 ```
 yarn dev
-http://localhost:3000/example/pdf
+http://localhost:8082/example/pdf
 ```
 
 ## 部署

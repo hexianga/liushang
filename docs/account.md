@@ -26,5 +26,5 @@ ip 信息：
 
 ```
 command: ssh -p 22 root@123.56.132.36
-password: r8tSCK5TxPyJGXoq
+password: iixzwFbMHvQMVhQ55iN4
 ```
