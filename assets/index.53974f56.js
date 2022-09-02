@@ -1,4 +1,4 @@
-import{r as l,j as e}from"./index.48f1ff14.js";const f=({cursorRef:o,container:a})=>{const[p,r]=l.exports.useState([]);return l.exports.useEffect(()=>{const i=o.current;if(!i)return;const u=a.current;if(!u)return;const x=()=>{const s=window.getSelection();if(!s)return;if(console.log(s.type),s.type==="None"){r([]),i.style.cssText="";return}const n=s.getRangeAt(0).getClientRects();if(s.type==="Caret"){const c=Array.from(n)[0];i.style.cssText=`
+import{r as l,j as e}from"./index.85a07fc6.js";const f=({cursorRef:o,container:a})=>{const[p,r]=l.exports.useState([]);return l.exports.useEffect(()=>{const i=o.current;if(!i)return;const u=a.current;if(!u)return;const x=()=>{const s=window.getSelection();if(!s)return;if(console.log(s.type),s.type==="None"){r([]),i.style.cssText="";return}const n=s.getRangeAt(0).getClientRects();if(s.type==="Caret"){const c=Array.from(n)[0];i.style.cssText=`
           left: ${c.left}px;
           top:  ${c.top}px;
           height:  ${c.height}px;
