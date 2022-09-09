@@ -1,1 +1,0 @@
-.custom-cursor{pointer-events:none;position:absolute;background-color:red;width:2px;-webkit-animation:cursor 1s infinite steps(1,start);animation:cursor 1s infinite steps(1,start)}@-webkit-keyframes cursor{0%,to{opacity:0}50%{opacity:1}}@keyframes cursor{0%,to{opacity:0}50%{opacity:1}}
