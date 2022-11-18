@@ -63,5 +63,48 @@
         });
       });
     </script>
+
+    <script>
+      'use strict';
+
+      const readonlyObj = {
+        get aa() {
+          return '2';
+        },
+      };
+      readonlyObj.aa = 1; // 失败，不能设置值，严格模式下会报错
+
+      console.log('======freeze object==== strict mode 下面修改 freezed obj 会抛出 error');
+      const obj = {
+        age: 1,
+        name: 'cat',
+      };
+      Object.freeze(obj);
+      console.log('op: change age to 2');
+      obj.age = 2;
+      console.log('freeze obj can not change, unless clone a new obj');
+      const newObj = Object.assign({}, obj);
+      newObj.age = 2;
+      console.log('isFrozen:', Object.isFrozen(obj), obj, 'cloned obj:', newObj);
+
+      console.log('=====seal a object====');
+      const obj2 = {
+        age: 1,
+      };
+      Object.seal(obj2);
+      console.log('op: add name field');
+      obj2.name = 'dog';
+      console.log(obj2);
+
+      console.log('======freeze object end====');
+
+      window.addEventListener('popstate', function (e) {
+        console.log('popstate', e);
+        // 注意⚠️的是：用 history.pushState() 或者 history.replaceState() 不会触发 popstate 事件。 popstate 事件只会在浏览器某些行为下触发, 比如点击后退、前进按钮或者调用 history.back()、history.forward()、history.go()方法
+      });
+      window.addEventListener('hashchange', function (e) {
+        console.log('hashchange', e);
+      });
+    </script>
   </body>
 </html>
