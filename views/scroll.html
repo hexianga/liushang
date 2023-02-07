@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /**
+ * hover 显示滚动条
+ **/
+      .scroll-hover-visible::-webkit-scrollbar {
+        display: none;
+        width: 12px;
+        height: 12px;
+      }
+      .scroll-hover-visible:hover::-webkit-scrollbar {
+        display: block;
+      }
+      .scroll-hover-visible::-webkit-scrollbar-thumb {
+        background-color: #7f7f7f99;
+        background-clip: padding-box;
+        border: 2px solid transparent;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-hover-visible" style="width: 200px; height: 200px; border: 1px solid red; overflow: scroll">
+      <div style="width: 1000px; height: 180px; background: linear-gradient(to right, 0% red, 100% green)"></div>
+    </div>
+  </body>
+</html>
